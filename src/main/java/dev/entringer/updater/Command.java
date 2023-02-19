@@ -1,5 +1,6 @@
 package dev.entringer.updater;
 
+import dev.entringer.updater.config.ConfigProperties;
 import dev.entringer.updater.file.FileService;
 import dev.entringer.updater.rest.Release;
 import dev.entringer.updater.rest.ReleaseService;
@@ -20,12 +21,14 @@ public class Command {
     ReleaseService releaseService;
     FileService fileService;
     ForceQuit forceQuit;
+    ConfigProperties configProperties;
 
 
-    public Command(ReleaseService releaseService, FileService fileService, ForceQuit forceQuit) {
+    public Command(ReleaseService releaseService, FileService fileService, ForceQuit forceQuit, ConfigProperties configProperties) {
         this.releaseService = releaseService;
         this.fileService = fileService;
         this.forceQuit = forceQuit;
+        this.configProperties = configProperties;
     }
 
     @ShellMethod(value = "Check the remote repository for new version.", key = "check")
@@ -48,5 +51,6 @@ public class Command {
         forceQuit.exit();
     }
 
+    // https://stackoverflow.com/questions/49770449/select-from-a-small-amount-of-options-in-spring-shell
 
 }

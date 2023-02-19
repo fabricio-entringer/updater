@@ -10,3 +10,24 @@
 1676744570019:check
 1676750061287:exit
 1676750310328:update
+1676758360109:component single
+1676758388072:stactrace
+1676758391924:stacktrace
+1676758415126:component single
+1676758418821:help
+1676758430763:component single
+1676758436387:asdf
+1676758443987:exit
+1676758464039:component single
+1676759085105:component multi
+1676760152752:component confirmation
+1676760264425:exit
+1676760459913:component string
+1676760474572:component string --mask test
+1676760729176:component string
+1676760774706:component single
+1676763982592:component string
+1676764056969:component string true
+1676764069731:component string --mask true
+1676796100001:check
+1676797542855:config list
