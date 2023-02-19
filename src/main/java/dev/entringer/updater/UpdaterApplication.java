@@ -13,6 +13,7 @@ public class UpdaterApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(UpdaterApplication.class, args);
+
     }
 
     @Bean

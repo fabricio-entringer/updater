@@ -1,5 +1,7 @@
 package dev.entringer.updater;
 
+import dev.entringer.updater.console.ConsoleColor;
+import dev.entringer.updater.console.ShellPrinter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -19,6 +21,8 @@ public class TableExamplesCommand {
 
 //    @Autowired
 //    ShellHelper shellHelper;
+    @Autowired
+ShellPrinter shellPrinter;
 
     @ShellMethod(value= "Display sample tables", key = "table")
     public void sampleTables() {
@@ -39,11 +43,22 @@ public class TableExamplesCommand {
         System.out.println(tableBuilder.build().render(80));
 
         Arrays.stream(BorderStyle.values()).forEach(style -> {
-            System.out.println(style.name());
+            shellPrinter.printInfo(style.name());
             tableBuilder.addFullBorder(style);
             System.out.println(tableBuilder.build().render(80));
         });
 
+    }
+
+    @ShellMethod(key = "styles")
+    public void printStyles() throws InterruptedException {
+        for (ConsoleColor color: ConsoleColor.values()) {
+            System.out.println(" ");
+            System.out.println(color.name());
+            shellPrinter.printCustom("Test message checking the text style for messages.", color.getCode());
+            Thread.sleep(100);
+
+        }
     }
 
 }
