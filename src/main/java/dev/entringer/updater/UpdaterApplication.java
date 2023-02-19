@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableConfigurationProperties({ConfigProperties.class, CustomProperties.class})
+@EnableConfigurationProperties({ConfigProperties.class})
 public class UpdaterApplication {
 
     public static void main(String[] args) {
